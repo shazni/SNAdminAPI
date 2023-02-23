@@ -37,4 +37,8 @@ service /snitemrest on new http:Listener(9090) {
     resource function put item/[int id](@http:Payload Item item) returns int|error {
         return updateItem(id, item);
     }
+
+    resource function delete item/[int id]() returns int|error {
+        return deleteItem(id);
+    }
 }
